@@ -9,27 +9,27 @@ root.title("To-Do")
 root.config(bg="green")
 task_list=[]
 
-def update_list():
+def update_list():      #for updating the list
     delete_task()
     for task in task_list:
         mylist.insert("end",task)
 
-def delete_task():
+def delete_task():      #for delete the task
     mylist.delete(0,END)
 
-def add_task():
+def add_task():     #for add the task
     task=entry.get("1.0",END)
     task_list.append(task)
     update_mylist()
 
-def clear_task():
+def clear_task():       #for clear the task
     sure=msg.askyesno("Are you really want to delete the all tasks ?")
     if sure==True:
         global task_list      
         task_list=[]
         update_mylist()
 
-def remove():
+def remove():       #for remove the task
     task = mylist.get("active")
     
     if task in task_list:
