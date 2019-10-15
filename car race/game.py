@@ -18,7 +18,7 @@ count=3
 def terminate():
     pygame.quit()
     sys.exit()
-
+# before pressing key
 def waitForPlayerToPressKey():
     while True:
         for event in pygame.event.get():
@@ -28,7 +28,7 @@ def waitForPlayerToPressKey():
                 if event.key == K_ESCAPE: #escape quits
                     terminate()
                 return
-
+# if wrong key pressed
 def playerHasHitBaddie(playerRect, baddies):
     for b in baddies:
         if playerRect.colliderect(b['rect']):
